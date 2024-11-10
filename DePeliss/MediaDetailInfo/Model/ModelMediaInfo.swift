@@ -23,15 +23,12 @@ struct RecomendationsSeries: Codable {
     let backdropPath: String?
     let id: Int?
     let name, originalName, overview, posterPath: String?
-    //let mediaType: MediaType
     let adult: Bool?
-    //let originalLanguage: OriginalLanguage
     let genreIDS: [Int]?
     let popularity: Double?
     let firstAirDate: String?
     let voteAverage: Double?
     let voteCount: Int?
-    //let originCountry: [OriginCountry]
 
     enum CodingKeys: String, CodingKey {
         case backdropPath = "backdrop_path"
@@ -39,32 +36,14 @@ struct RecomendationsSeries: Codable {
         case originalName = "original_name"
         case overview
         case posterPath = "poster_path"
-        //case mediaType = "media_type"
         case adult
-        //case originalLanguage = "original_language"
         case genreIDS = "genre_ids"
         case popularity
         case firstAirDate = "first_air_date"
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
-        //case originCountry = "origin_country"
     }
 }
-
-/*enum MediaType: String, Codable {
-    case tv = "tv"
-}
-*/
-/*enum OriginCountry: String, Codable {
-    case ca = "CA"
-    case gb = "GB"
-    case us = "US"
-}*/
-
-/*enum OriginalLanguage: String, Codable {
-    case en = "en"
-}*/
-
 
 enum MediaInfoSection: Int, CaseIterable {
     case header
@@ -100,9 +79,7 @@ struct RecomendationsMovies: Codable {
     let backdropPath: String?
     let id: Int
     let title, originalTitle, overview, posterPath: String?
-    //let mediaType: MediaType
     let adult: Bool?
-    //let originalLanguage: OriginalLanguage
     let genreIDS: [Int]?
     let popularity: Double?
     let releaseDate: String?
@@ -116,9 +93,7 @@ struct RecomendationsMovies: Codable {
         case originalTitle = "original_title"
         case overview
         case posterPath = "poster_path"
-        //case mediaType = "media_type"
         case adult
-        //case originalLanguage = "original_language"
         case genreIDS = "genre_ids"
         case popularity
         case releaseDate = "release_date"

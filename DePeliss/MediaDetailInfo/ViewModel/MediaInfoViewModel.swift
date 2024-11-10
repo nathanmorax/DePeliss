@@ -68,46 +68,4 @@ class MediaInfoViewModel {
             print("Error fetching trending movies: \(error)")
         }
     }
-    
-    func configureCellData(for indexPath: IndexPath) -> CellData {
-        let sectionType = MediaInfoSection(rawValue: indexPath.section)
-        
-        switch sectionType {
-        case .header:
-            if let data = ratedSeriesData {
-                return CellData(imageUrl: data.backdropPath, title: data.name ?? "")
-            }
-
-        case .about:
-            if let data = ratedSeriesData {
-                return CellData(imageUrl: data.overview, title: data.name ?? "")
-            }
-
-        case .related:
-            if indexPath.item < recomendationsSeriesData.count {
-                let serie = recomendationsSeriesData[indexPath.item]
-                return CellData(imageUrl: serie.backdropPath, title: serie.name ?? "")
-            } else if indexPath.item < recomendationsMoviesData.count {
-                let movie = recomendationsMoviesData[indexPath.item]
-                return CellData(imageUrl: movie.backdropPath, title: movie.originalTitle ?? "")
-            }
-        case .information:
-            if let data = ratedSeriesData {
-                return CellData(imageUrl: data.backdropPath, title: data.name ?? "")
-            }
-        default:
-            return CellData()  // Default empty CellData if no match
-        }
-        
-        return CellData()  // Return empty CellData as fallback
-    }
-
-
-      struct CellData {
-          var imageUrl: String?
-          var title: String?
-          var overview: String?
-          var popularity: Double?
-          var releaseDate: String?
-      }
 }

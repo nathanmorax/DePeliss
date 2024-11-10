@@ -100,7 +100,6 @@ class HomeViewController: UICollectionViewController {
         }
     }
     
-    // Métodos de UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return  HomeSection.allCases.count
         
